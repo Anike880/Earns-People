@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Withdraw</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="icon" href="/favicon.jpg">
+<style>
+body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input {
+    background-color:transparent;
+    width: 60%;
+    margin-left: 20%;
+    border: 0px solid;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 25px;
+}
+input:focus {
+    outline:none;
+    border: 0px solid;
+    border-bottom: 1px solid black;
+}
+h2{
+  text-align: center;
+}
+button{
+  padding: 12px 60px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: mediumseagreen;
+  margin: 8px 0px 0px 76.5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  animation-name: example;
+  animation-duration: 1s;
+}
+@keyframes example{
+  from {transform: scale(0.5)}
+  to {transform: scale(1.0)}
+}
+.sp1 {
+  margin-left: 20px;
+  color: darkgray;
+  font-family: monospace;
+}
+@media screen and (min-width: 600px){
+  button{
+    margin-left: 40.5%;
+  }
+  .sp1{
+    margin-left: 20%;
+  }
+}
+</style>
+</head>
+<body>
+ <a href="/account.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a>
+ <h2>Withdraw Amount</h2><br><br>
+<input type="number" placeholder="Enter Amount" id="amount"><br><br><br>
+<button onclick="withdrawal()">Withdraw <i class="fa fa-arrow-down"></i></button><br><br><br>
+<span class="sp1">Note:</span>
+<p class="sp1">1) Min Amount ₹25 and Maximum Amount ₹20000 in day.</p>
+<p class="sp1">2) Withdrawal Money Send Your UPI Account.</p>
+<p class="sp1">3) Withdrawal Money Send Within 2-24 Hours.</p>
+<script>
+function withdrawal(){
+var am = document.getElementById("amount").value;
+var b = localStorage.getItem("Diamond");
+var bm = parseInt(b / 30);
+var pp = localStorage.getItem("Method");
+if(pp == "None"){
+  alert("Please Add Payment Method");
+}
+else if(am > bm){
+  alert("Your wallet amount is - " +  bm);
+}else if(am < 25 || am > 20000){
+  alert("please check withdrawal limit")
+}else{
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+  var mon = month + 1;
+  let currentDate = `${year}-${mon}-${day}, ${hour}:${minute}:${second}`;
+  localStorage.setItem("Date", currentDate);
+  localStorage.setItem("Amount", am);
+  var t = am * 30;
+  var m = b - t;
+  localStorage.setItem("Diamond", m);
+  localStorage.setItem("Withdraw", "Successful");
+  localStorage.setItem("request", "");
+  window.open("/request.html", "_self");
+}
+}
+</script>
+</body>
+</html>

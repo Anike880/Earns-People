@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Withdraw</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="icon" href="/favicon.jpg">
+<style>
+bidy{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input {
+    background-color:transparent;
+    width: 60%;
+    margin-left: 20%;
+    border: 0px solid;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 25px;
+}
+input:focus {
+    outline:none;
+    border: 0px solid;
+    border-bottom: 1px solid black;
+}
+h2{
+  text-align: center;
+}
+button{
+  padding: 12px 50px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: mediumseagreen;
+  margin: 8px 0px 0px 70px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  animation-name: example;
+  animation-duration: 1s;
+}
+@keyframes example{
+  from {transform: scale(0.5)}
+  to {transform: scale(1.0)}
+}
+.sp1{
+  margin-left: 20px;
+  color: darkgray;
+  font-family: monospace;
+}
+@media screen and (min-width: 600px){
+  input{
+    width: 45%;
+    margin-left: 27.5%;
+  }
+  button{
+    margin-left: 39%;
+  }
+  .sp1{
+    margin-left: 27.5%;
+  }
+}
+</style>
+</head>
+<body>
+ <a href="/account.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a>
+ <h2>Payment Method</h2><br><br>
+<input type="text" placeholder="Enter UPI ID" id="method"><br><br><br>
+<button onclick="add()">Add Method <i class="fa fa-plus"></i></button><br><br><br>
+<span class="sp1">Note:</span>
+<p class="sp1">1) Enter a Valid UpI Details.</p>
+<p class="sp1">2) UPI ID OR UPI Register Mobile <br> number And @Handle.</p>
+<p class="sp1">3) Supported All UPI Account.</p>
+<p class="sp1">4) Bank Account Not Supported.</p>
+<script>
+function add(){
+  var a = document.getElementById("method").value;
+  if(a.length < 6 || a.length > 18){
+    alert("Enter a Correct UPI");
+  }else{
+    alert("Your UPI has been Added");
+    localStorage.setItem("Method", a);
+    window.open("/account.html", "_self");
+}
+}
+</script>
+</body>
+</html>

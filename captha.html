@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Captha Work</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="/favicon.jpg">
+<style>
+ body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.tit{
+  text-align: center;
+  font-size: 30px;
+  animation-name: name;
+  animation-duration: 2s;
+}
+@keyframes name{
+  from{transform: scale(0.5)}
+  to{transform: scale(1)}
+}
+.captha{
+  width: 90%;
+  height: 200px;
+  background-color: #ccc;
+  margin-left: 5%;
+  margin-top: 20px;
+  border-radius: 30px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#code{
+  text-align: center;
+  padding-top: 85px;
+  letter-spacing: 5px;
+  opacity: 0.2;
+  font-family: cursive;
+  font-size: 18px;
+}
+input{
+  width: 48%;
+  margin-left: 10%;
+  padding: 12px 12px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+button{
+  padding: 10.5px;
+  border-radius: 5px;
+  background-color: mediumseagreen;
+  color: white;
+  letter-spacing: 2px;
+  border: none;
+  width: 20%;
+  margin-left: 3%;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 17px;
+}
+.q1{
+  margin-left: 50px;
+  font-size: 12px;
+  color: red;
+}
+#mm{
+  margin: 30px 0px 0px 50px;
+}
+@media screen and (min-width: 600px){
+  .captha{
+    width: 85%;
+    margin-left: 7.5%;
+  }#mm{
+    margin: 30px 0px 0px 90px;
+  }.q1{
+    margin-left: 100px;
+  }input{
+    margin-left: 15%;
+  }
+}
+</style>
+</head>
+<body>
+<a href="/index.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a>
+<h1 class="tit">Captha Work</h1>
+ <i class="fa fa-diamond" id="mm" style="font-size: 30px; color: deepskyblue;"></i>
+<span id="coin" style="font-size: 30px;"></span><br>
+<div class="captha">
+<h2 id="code"></h2>
+</div>
+  <span class="q1">15 Captha = ₹1</span><br><br>
+<input type="number" placeholder="Enter Captha" id="check" min="2" required>
+<button value="submit" onclick="chec()">Send</button>
+<script>
+var q = localStorage.getItem("Diamond");
+document.getElementById("coin").innerHTML=(q);
+var cap = parseInt(Math.random() * 1836388337999) * 8270199;
+document.getElementById("code").innerHTML = (cap);
+function chec(){
+  var a = document.getElementById("check").value;
+  if(cap == a){
+    var c = parseInt(localStorage.getItem("Diamond"));
+    var balance = c + 2;
+    localStorage.setItem("Diamond", balance);
+    document.getElementById("coin").innerHTML=(balance);
+    alert("Captha Submitted");
+    window.open("/captha.html", "_self");
+  }else{
+    alert("Incorrect Captha");
+  }
+}
+</script>
+</body>
+</html>

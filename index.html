@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="/favicon.jpg">
+<style>
+body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header{
+  background-color: white;
+  padding-bottom: 8px;
+  position: fixed;
+  width: 100%;
+  border-end-end-radius: 25px;
+  display: flex;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border-bottom: solid 0.5px transparent;
+}
+#bar{
+  font-size: 28px;
+  margin: 10px 0px 0px 20px;
+}
+.tit{
+  font-size: 22px;
+  margin-left: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0.5px 0.5px black;
+  font-family: monospace;
+}
+.img{
+  width: 95%;
+  height: 220px;
+  margin-left: 2.5%;
+  margin-top: 15px;
+  border-radius: 20px;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border: solid 0.8px transparent;
+/*  filter: blur(8px);
+  -webkit-filter: blur(30px);*/
+}
+h2{
+  text-align: center;
+  font-size: 30px;
+}
+nav{
+  background: hsla(235, 100%, 0%, 0.5);
+  text-align: center;
+  padding: 25px 10px 25px 10px;
+  font-size: 20px;
+  position: fixed;
+  margin-top: 47px;
+  width: 43.50%;
+  height: 100%;
+  padding-left: 0px;
+  visibility: hidden;
+  border-start-end-radius: 5px;
+  border-end-end-radius: 5px;
+}
+ @keyframes demo{
+  from {transform: scale(0.8)}
+  to {transform: scale(1.0)}
+}
+nav a{
+  text-decoration:  none;
+  color: white;
+  padding: 15px 10px 15px 10px;
+  display: block;
+}
+nav a:hover{
+  background-color: transparent;
+}
+ @keyframes example{
+  from {transform: scale(0.5)}
+  to {transform: scale(1.0)}
+}
+.a1, .a2{
+  margin-left: 20px;
+  color: gray;
+  font-size: 12px;
+  font-family: monospace;
+}
+.a2{
+  color: black;
+}
+.div2, .div3{
+  width: 90%;
+  height: 30px;
+  background-color: yellow;
+  margin: 5px 0px 10px 5%;
+  padding-top: 15px;
+  display: flex;
+  border: 0.5px solid #ccc;
+  border-radius: 15px;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border: solid 0.9px transparent;
+}
+.div3{
+  background-color: lime;
+}
+.b0{
+  margin-top: -5px;
+  margin-left: 25px;
+  font-size: 22px;
+}
+.head {
+  background: linear-gradient(to right, red, blue);
+  color: transparent;
+  background-clip: text;
+  margin-left: 87px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  margin-top: 11px;
+}
+#bb{
+  color: limegreen;
+  margin-left: 25px;
+}
+.imo{
+  width: 50px;
+  height: 50px;
+  margin: 0px 0px 0px 90px;
+  position: absolute;
+}
+@media screen and (min-width: 600px){
+  .img{
+    width: 60%;
+    margin-left: 27%;
+  }.a1{
+    margin-left: 27%;
+  }.div2, .div3{
+    margin-left: 27%;
+    width: 60%;
+  }.task1{
+    width: 35%;
+    margin-left: 10%;
+  }.flex1{
+    display: flex;
+  }nav{
+    width: 17%;
+    visibility: visible;
+  }#bar{
+    margin-left: 30px;
+  }h2{
+    margin-left: 14%;
+  }.head{
+    margin-left: 75px;
+  }#bb{
+    margin-left: 27%;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<nav id="nav1">
+  <a href="/index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="/earn.html"><i class="fa fa-inr"></i> Earning </a>
+  <a href="/account.html"><i class="fa fa-user-circle-o"></i> Account</a>
+  <a href="/contact.html"><i class="fa fa-fw fa-envelope"></i> Contact </a>
+</nav>
+  <i class="fa fa-bars" id="bar" onclick="myFunction()"></i>
+<img src="/favicon1.png" class="imo">
+<span class="head"><b>arnspeople</b></span>
+</header><br><br><br><br>
+<img src="/home.jpg" class="img">
+<h2>Earn Money in Online<br>Work</h2><br>
+<span class="a1">Dashboard:</span><br>
+<div class="div2">
+  <span class="a2">Last Withdrawal</span>
+  <h2 class="b0" id="m2" style="margin-left: 19px;">₹0</h2>
+</div>
+<div class="div3">
+  <span class="a2">Total Earnings</span>
+  <h2 class="b0" id="m3">₹0</h2>
+</div><br>
+<i class="fa fa-check-square-o" id="bb"></i>
+<span style="color: gray; font-size: 12px;">100% Trusted Earning Website</span><br>
+<i class="fa fa-check-square-o" id="bb"></i>
+<span style="color: gray; font-size: 12px;">Real Earnings Money Credited to your UPI</span><br>
+<script>
+var c = localStorage.getItem("Diamond");
+var ll = parseInt(c / 30);
+localStorage.setItem("Coin", ll);
+document.getElementById("m3").innerHTML = ("₹" + ll);
+var y = localStorage.getItem("Logout");
+if(y == "No"){
+  console.log("Lets Start");
+}else{
+  window.open("/login.html", "_self");
+}
+var count = 0;
+function myFunction() {
+count++;
+  if (count == 1){
+   document.getElementById("nav1").style.visibility="visible";
+   
+  } else {
+  document.getElementById("nav1").style.visibility="hidden";
+     count = 0;
+  }
+}
+var a = localStorage.getItem("Amount");
+document.getElementById("m2").innerHTML=("₹" + a);
+</script>
+</body>
+</html>

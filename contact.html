@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/favicon.jpg">
+<style>
+body {
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.backicon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin: 10px 0px 0px 15px;
+  visibility: visible;
+}
+h3{
+  text-align: center;
+  font-size: 22px;
+  word-spacing: 0.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.80px;
+  margin-left: 0px;
+  font-family: monospace;
+}
+label{
+  margin-left: 48px;
+  font-size: 14.5px;
+}
+input {
+  width: 66%;
+  margin-left: 13%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+textarea{
+  width: 66%;
+  margin-left: 13%;
+  padding: 12px 12px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.btn{
+  padding: 15px;
+  border-radius: 50px;
+  background-color: mediumseagreen;
+  color: white;
+  letter-spacing: 2px;
+  border: none;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+@media screen and (min-width: 600px){
+label{
+  margin-left: 330px;
+  font-size: 18px;
+}
+input{
+  width: 58.5%;
+  margin-left: 19%;
+}
+textarea{
+  width: 59%;
+  margin-left: 18.7%;
+}
+.btn{
+  margin-left: 17%;
+  width: 66%;
+}
+}
+</style>
+</head>
+<body>
+<a href="/index.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a><br><br>
+<h3>Get It Touch</h3><br>
+ <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="e1bbfadf-365f-4dac-b4e6-8a8c20fd4aa0">
+<input type="text" name="Name" placeholder="Name" id="txt1" required minlength="3"><br><br><br>
+<input type="email" name="E-mail" placeholder="Email" id="txt2" required minlength="10"><br><br><br>
+<input type="number" name="Phone Number" placeholder="Mobile Number" id="txt3" required minlength="10"><br><br><br>
+<textarea name="Message" cols="31" rows="5" placeholder="Describes your write....." id="txt4" required minlength="1"></textarea><br><br><br>
+<button class="btn" value="submit">Send Message</button></form><br><br><br><br>
+
+<script>
+
+</script>
+</body>
+</html>

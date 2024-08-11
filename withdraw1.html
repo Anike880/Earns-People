@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Withdraw</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="icon" href="/favicon.jpg">
+<style>
+body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.body{
+  width: 85%;
+  margin-left: 7.5%;
+  height: 470px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding-top: 15px;
+}
+#amount{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 25px;
+}
+.sp1{
+  font-weight: bold;
+  font-family: monospace;
+  margin-left: 20px;
+}
+.status{
+  color: green;
+  text-align: center;
+  margin-top: 30px;
+}
+.sp0{
+  color: darkgray;
+  margin-left: 20px;
+  font-family: monospace;
+}
+button{
+  padding: 12px 50px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: mediumseagreen;
+  margin: 8px 0px 0px 70px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  animation-name: example;
+  animation-duration: 1s;
+}
+@keyframes example{
+  from {transform: scale(0.5)}
+  to {transform: scale(1.0)}
+}
+@media screen and (min-width: 600px){
+  .body{
+    margin-left: 30%;
+    width: 40%;
+  }
+  button{
+    margin-left: 30%;
+  }
+}
+</style>
+</head>
+<body>
+ <a href="/account.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a><br><br>
+<div class="body"><br>
+  <span id="amount"></span>
+  <i class="fa fa-certificate" style="color: limegreen; font-size: 30px; margin: 3.7px 0px 0px 6px; position: absolute;"></i>
+  <i class="fa fa-check" style="color: white; font-size: 18px; margin: 9px 0px 0px 9px; position: absolute;"></i>
+  <br><br><br>
+  <span class="sp1">Recive To</span><br><br>
+  <span class="sp1">Name: </span>
+  <span id="name">jshs</span><br>
+  <span class="sp1">UPI ID: </span>
+  <span id="i">jshs</span><br>
+  <span class="sp1">Date & Time: </span>
+  <span id="date">aja</span><br><br>
+  <span class="sp0">Note: </span><br>
+  <p class="sp0">1) Wait 2-24 Hours For Withdrawal Recived.</p>
+    <p class="sp0">2) Payment Time   is 24 Hour Format.</p>
+    <h3 class="status">Withdraw Successful</h3><br>
+<a href="/account.html"><button><i class="fa fa-angle-left"></i> Go Back</button></a>
+<script>
+var a = localStorage.getItem("name");
+var b = parseInt(localStorage.getItem("Amount"));
+var c = localStorage.getItem("Date");
+var d = localStorage.getItem("Method");
+var b1 = "₹" + b;
+document.getElementById("amount").innerHTML = (b1);
+document.getElementById("name").innerHTML = (a);
+document.getElementById("i").innerHTML = (d);
+document.getElementById("date").innerHTML = (c);
+</script>
+</div>
+</body>
+</html>

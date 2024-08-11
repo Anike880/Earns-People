@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Account</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="/favicon.jpg">
+<style>
+body {
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.div, .div1{
+  width: 90%;
+  height: 200px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 30px;
+  margin-left: 5%;
+  animation-name: div;
+  animation-duration: 0.5s;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border: solid 0.8px transparent;
+}
+.div1{
+  height: 130px;
+  padding-top: 10px;
+  background-color: #EEEFFF;
+}
+
+@keyframes div{
+  from {background-color: black;}
+  to {background-color: lightgray;}
+}
+.img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 40px 0px 0px 40px;
+  transform: scale(1.5);
+  animation-name: w;
+  animation-duration: 1s;
+}
+@keyframes w{
+  from {transform: scale(0.1)}
+  to {transform: scale(1.5)}
+}
+#name{
+  color: black;
+  margin-left: 32px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 35px;
+  text-shadow: 0.2px 0.2px black;
+  letter-spacing: 0.8px;
+}
+.hr1{
+  margin-left: -115px;
+  margin-top: 15px;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border: solid 0.5px transparent;
+}
+.btn, .btn1, .btn2, .btn3{
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: mediumseagreen;
+  margin: 8px 0px 0px -90px;
+  cursor: pointer;
+  color: white;
+  animation-name: example;
+  animation-duration: 1s;
+}
+.btn1{
+  background-color: red;
+  margin-left: 55px;
+}
+.btn2, .btn3{
+  background-color: yellow;
+  color: black;
+  margin-left: 75px;
+  padding: 12px 35px;
+  font-size: 15px;
+  margin-top: 0px;
+}
+@keyframes example{
+  from {transform: scale(0.5)}
+  to {transform: scale(1.0)}
+}
+.sp0{
+  font-family: monospace;
+  margin-left: 10px;
+  font-size: 15px;
+}
+.w1{
+  font-family: monospace;
+  font-weight: bold;
+  margin-left: 40px;
+}
+#add1{
+  margin-top: -35px;
+  visibility: hidden;
+}
+#mm{
+  color: red;
+  font-size: 20px;
+  margin-left: 20px;
+  position: absolute;
+}
+#with1{
+  margin-top: -45px;
+}
+.btn3{
+  background-color: #ccc;
+  margin-left: 34%;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border: solid 0.8px transparent;
+  padding: 10px 30px;
+  
+}
+@media screen and (min-width: 600px){
+  .div, .div1{
+    width: 50%;
+    margin-left: 25%;
+  }.btn {
+    margin-left: -18%;
+  }
+  .btn1{
+    margin-left: 45%;
+  }.w1{
+    margin-left: 70px;
+  }.btn2{
+    margin-left: 33%;
+  }.btn3{
+    margin-left: 40%;
+  }#mm{
+    margin-left: 130px;
+  }
+}
+</style>
+</head>
+<body>
+<a href="/index.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a><br><br>
+<div class="div">
+  <div style="display: flex;">
+<img src="/profile.jpg" class="img">
+<span id="name"></span>
+  </div>
+<div style="margin: -28px 0px 0px 115px; font-size: 13px;">
+  <i class="fa fa-envelope"></i>
+  <span id="email"></span><br>
+  <i class="fa fa-inr" style="margin-top: 5px;"></i>
+  <span id="coin">000</span><br><br><hr class="hr1">
+  <a href="/withdraw.html"><button class="btn">Withdraw <i class="fa fa-arrow-down"></i></button></a>
+  <button class="btn1" onclick="logout()">Log Out <i class="fa fa-sign-out"></i></button>
+</div>
+</div><br>
+<div class="div1">
+  <h2 style="text-align: center;">Payment Method</h2>
+  <div id="add">
+  <a href="/method.html"><button class="btn2">Add Method <i class="fa fa-plus"></i></button></a>
+  </div>
+  <div id="add1">
+  <span class="w1">UPI ID - </span>
+  <span id="upi"></span>
+  <i class="fa fa-trash-o" id="mm" onclick="delet()"></i>
+  </div>
+  </div><br>
+<div class="div1">
+  <h2 style="text-align: center;">Earn Money Online</h2>
+<a href="/earn.html"><button class="btn2">Start Earning <i class="fa fa-arrow-right"></i></button></a><br><br><br>
+<span class="sp0"><b>Last Month Withdrawal:</b></span><br><br><div id="with">
+<h4 style="color: lightgray; text-align: center; font-size: 15px; margin-top: 20px;">No Withdrawal History</h4></div>
+<div id="with1">
+ <a href="/withdraw1.html"><button class="btn3">Check</button></a><br><br><br><br>
+</div>
+</div>
+<script>
+var y = localStorage.getItem("Logout");
+if(y == "Yes"){
+  alert("Login Your Account");
+  window.open("/login.html", "_self");
+}
+else{
+  console.log("Lets Start");
+}
+var t = localStorage.getItem("Method");
+if(t == "None"){
+  document.getElementById("add").style.visibility = "visible";
+  document.getElementById("add1").style.visibility = "hidden";
+}else{
+  document.getElementById("add1").style.visibility = "visible";
+  document.getElementById("add").style.visibility = "hidden";
+  document.getElementById("upi").innerHTML=(t);
+}
+var ow = localStorage.getItem("Withdraw");
+if (ow == "Successful") {
+  document.getElementById("with1").style.visibility = "visible";
+  document.getElementById("with").style.visibility = "hidden";
+} else {
+  document.getElementById("with").style.visibility = "visible";
+  document.getElementById("with1").style.visibility = "hidden";
+  document.getElementById("upi").innerHTML = (t);
+}
+var a = localStorage.getItem("name");
+var b = localStorage.getItem("email");
+var c = localStorage.getItem("Diamond");
+document.getElementById("name").innerHTML = (a);
+document.getElementById("email").innerHTML = (b);
+var ll = parseInt(c / 30);
+localStorage.setItem("Coin", ll);
+document.getElementById("coin").innerHTML = (ll);
+function logout(){
+  alert("Logged Out");
+  window.open("/index.html", "_self");
+  localStorage.setItem("Logout", "Yes");
+}
+function delet(){
+  localStorage.setItem("Method", "None");
+  alert("Your UPI has Removed");
+  document.getElementById("add").style.visibility = "visible";
+  document.getElementById("add1").style.visibility = "hidden";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/favicon.jpg">
+<style>
+body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.img{
+  width: 100%;
+  height: 350px;
+  margin-top: -50px;
+}
+.div{
+  width: 100%;
+  height: 500px;
+  background-color: #ECECEC;
+  border-radius: 50px;
+  margin-top: -55px;
+  position: absolute;
+  border-end-end-radius: 35px;
+  border-end-start-radius: 35px;
+}
+.body{
+  width: 100%;
+  height: 418px;
+  background-color: white;
+  border-radius: 50px;
+  margin-top: 0px;
+  border-end-end-radius: 35px;
+  border-end-start-radius: 35px;
+  padding-top: 25px;
+}
+h4{
+  text-align: center;
+  letter-spacing: 1.5px;
+  word-spacing: 2px;
+  font-size: 22px;
+}
+.sp1, .sp2, sp3{
+  margin-left: 23.5%;
+  color: #ccc;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  font-size: 15px;
+  margin-top: 30px;
+}
+.sp2{
+  margin-left: 19.5%;
+  font-size: 13.5px;
+  word-spacing: 0.5px;
+  letter-spacing: 0.2px;
+}
+.sp3{
+  margin-left: 50%;
+  font-size: 15px;
+  color: mediumseagreen;
+  
+}
+form{
+  margin-top: 10px;
+}
+input{
+  width: 60%;
+  margin-left: 17%;
+  padding: 12px 12px 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#password{
+  padding-right: 30px;
+  width: 55%;
+}
+.btn{
+  padding: 15px;
+  border-radius: 50px;
+  background-color: mediumseagreen;
+  color: white;
+  letter-spacing: 2px;
+  border: none;
+  width: 67.5%;
+  margin-left: 17%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+#togglePassword{
+  margin-left: -30px;
+  font-size: 18px;
+}
+#hq{
+  margin-left: 29.7%;
+}
+#email {
+  margin-top: 15px;
+}
+ @media screen and (min-width: 600px){
+  #full{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 30px;
+  }.div{
+    width: 60%;
+    margin-left: 0%;
+    border: 1px solid gray;
+    border-radius: 30px;
+  }.img{
+    height: 320px;
+    border-radius: 30px;
+  }#password{
+    width: 59%;
+  }input{
+    width: 62%;
+  }.sp2{
+    margin-left: 42%;
+  }#hq{
+    margin-left: 34%;
+  }.sp1{
+    margin-left: 33.5%;
+  }.sp3{
+    margin-left: 60%;
+  }#email{
+    margin-top: 30px;
+  }
+}
+</style>
+</head>
+<body>
+<div id="full">
+<img src="/favicon1.png" class="img"/>
+<div class="div">
+  <h4 class="top">Login to your Account</h4>
+<!---
+<div class="body">
+<i class="fa fa-facebook-f" id="hq" style="color: blue; padding: 4.5px 9.5px; border: 1px solid #ccc; border-radius: 50%;  font-size: 25px;"></i>
+<i class="fa fa-twitter-square" style="color: deepskyblue; padding: 5.5px 7px; border: 1px solid #ccc; border-radius: 50%; margin-left: 5%; font-size: 25px;"></i>
+<i class="fa fa-google" style="color: red; padding: 7px 8px; border: 1px solid #ccc; border-radius: 50%; margin-left: 5%; font-size: 25px; font-size: 22px;"></i><br>
+<div style="margin-top: 15px;">
+<span class="sp1">Or use your email account</span></div><br>---><br>
+  <input type="email" placeholder="Email" min="12" id="email" name="Email" required><br><br>
+  <input type="password" placeholder="Password" min="8" id="password" name="Password" required>
+<i class="fa fa-lock" id="togglePassword"></i>
+  <div style="margin: 5px 0px 10px 0px;">
+  <span class="sp3" 
+  onclick="alert('Forget Password Not Available')"
+  >Forget Password?</span><br>
+  </div>
+  <button type="submit" class="btn" onclick="login()">LOGIN</button><br><br>
+  <span class="sp2">Don't have an account? </span>
+<a href="/register.html" style="text-decoration: none;"><span class="sp2" style="color: mediumseagreen; margin-left: 0px; cursor: pointer;">Register Now</span></a>
+</div>
+</div>
+</div>
+<script>
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const password = document.getElementById('password');
+    const a = document.getElementById("togglePassword");
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    
+/*    // Toggle the icon
+    if (type === 'password') {
+        this.a.remove('fa fa-lock');
+        this.a.add('fa fa-unlock');
+    } else {
+        this.a.remove('fa fa-unlock');
+        this.a.add('fa fa-lock');
+    }*/
+});
+function login(){
+  var defaultemail = localStorage.getItem("email");
+  var defaultpassword = localStorage.getItem("password");
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  if(email.length < 1 && password.length < 1){
+    alert("Enter Details");
+  }else if(defaultemail === email && defaultpassword === password){
+    alert("Login Successful");
+    window.open("/index.html", "_self");
+    localStorage.setItem("Logout", "No");
+  }
+  else{
+    alert("Incorrect Details");
+  }
+}
+</script>
+</body>
+</html>

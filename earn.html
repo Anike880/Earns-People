@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Earning</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="/favicon.jpg">
+<style>
+ body{
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.div1{
+  width: 90%;
+  height: 200px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 30px;
+  margin-left: 5%;
+  animation-name: div;
+  animation-duration: 0.5s;
+  height: 130px;
+  padding-top: 10px;
+  background-color: #EEEFFF;
+  background: linear-gradient(white, white) padding-box, linear-gradient(45deg, red 0%, blue 100%) border-box;
+  border: solid 0.8px transparent;
+}
+@keyframes div{
+  from {background-color: black;}
+  to {background-color: lightgray;}
+}
+.btn1{
+  padding: 12px 35px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: yellow;
+  margin: 0px 0px 0px 75px;
+  cursor: pointer;
+  color: black;
+  animation-name: example;
+  animation-duration: 1s;
+  font-size: 15px;
+}
+.task1{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 85%;
+  height: 50px;
+  margin: 25px 0px 25px 7.5%;
+}
+.task0{
+  font-family: times;
+  font-size: 13px;
+  margin: -35px 0px 0px 68px;
+}
+.a1{
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  background-color: mediumseagreen;
+  color: white;
+  border-radius: 30px;
+  margin: -30.5px 0px 0px 225px;
+  display: flex;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
+.q1 {
+  margin-left: 50px;
+  font-size: 12px;
+  color: red;
+}
+#mm{
+  margin: 15px 0px 30px 40px;
+}
+@media screen and (min-width: 600px){
+ .div1{
+    width: 50%;
+    margin-left: 25%;
+  }.btn1{
+    margin-left: 33%;
+  }.task1 {
+    width: 36%;
+    margin-left: 32%;
+  }.a1{
+    margin-left: 265px;
+  }
+  #mm, .q1{
+    margin-left: 26%;
+  }
+}
+</style>
+</head>
+<body>
+<a href="/index.html"><i class="fa fa-arrow-left" style="margin: 15px 15px; color: black;"></i></a><br><br>
+ <i class="fa fa-diamond" id="mm" style="font-size: 30px; color: deepskyblue;"></i>
+<span id="coin" style="font-size: 30px;"></span><br>
+<div class="div1">
+  <h2 style="text-align: center;">Captha Typing Work</h2>
+<a href="/captha.html"><button class="btn1">Start Earning <i class="fa fa-arrow-right"></i></button></a></div><br>
+<!---<div class="div1">
+  <h2 style="text-align: center;">Data Entry Work</h2>
+<a href="/captha.html"><button class="btn1">Start Earning <i class="fa fa-arrow-right"></i></button></a></div><br>--->
+   <span class="q1">30 diamond = ₹1</span><br><br>
+  <div class="task1">
+  <i class="fa fa-television" style="color: black; font-size: 30px; margin: 9px 0px 0px 20px;"></i>
+  <a href="/ads.html"><button class="a1">Start</button></a>
+  <h6 class="task0">Watch Ads</h6>
+  <i class="fa fa-diamond" style="color: deepskyblue; margin: -5px 0px 0px 68px;"></i>
+  <span>30</span>
+</div>
+<script>
+var q = localStorage.getItem("Diamond");
+document.getElementById("coin").innerHTML = (q);
+</script>
+</body>
+</html>
